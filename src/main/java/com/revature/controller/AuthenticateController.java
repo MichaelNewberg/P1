@@ -33,21 +33,17 @@ public class AuthenticateController {
 		}
 		return new ResponseEntity<>(user, HttpStatus.BAD_REQUEST);
 	}
-
 	@PostMapping("/logout")
 	public String logout(HttpSession session){
         session.invalidate();
         return "Logged out successfully.";
     }
-
 	@PostMapping("/register")
 	public ResponseEntity<String> register(@RequestBody User user){
 		return new ResponseEntity<>(this.userService.createUser(user), HttpStatus.OK);
 	}
-
 	@GetMapping("/user/{name}")
 	public ResponseEntity<User> getUserbyName(@PathVariable String name){
 		return new ResponseEntity<>(this.userService.getUserByUsername(name), HttpStatus.OK);
 	}
-	//add update user after everything is done
 }
