@@ -15,4 +15,4 @@ scrape_configs: # in short, tells promtail where to find log files we want pushe
           - localhost
         labels:
           job: planetarium
-          __path__: /var/log/newRollingFile.log
+          __path__: /var/log/SpringRollingFile.log

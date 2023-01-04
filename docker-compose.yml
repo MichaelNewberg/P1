@@ -23,7 +23,7 @@ services:
     container_name: logging-p1promtail
     volumes:
       - ./configs/promtail-config.yml:/etc/promtail/promtail-config.yml # configuration I made:config saved in container
-      - ./logs/newRollingFile.log:/var/log/newRollingFile.log # log we want to save:log in promtail
+      - ./logs/SpringRollingFile.log:/var/log/SpringRollingFile.log # log we want to save:log in promtail
     command: "--config.file=/etc/promtail/promtail-config.yml"
 
   grafana:
